@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        body{
+            /* border: 1px solid pink; */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+        .fetch{
+            width: 7rem;
+            height: 3rem;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+    </style>
+    <body>
+        <h2>Learn fetch API</h2>
+        <!-- create btn and make event -->
+        <input class="fetch" type="button" value="practice" onclick="alert('learn more fetch')">
+
+        <!-- make fetch btn -->
+        <input class="fetch" type="button" value="alert" onclick="
+            fetch('0601_fetchAlert')      //서버에게 text 파일을 요청
+            .then(function(res){res.text()
+            .then(function(text){alert(text)})})">
+
+        <!-- change web page contents -->
+        <article>
+
+        </article>
+        <input class="fetch" type="button" value="page" onclick="
+        fetch('0601_fetchPage')
+        .then(function(res){res.text()
+        .then(function(text){
+            document.querySelector('article').innerHTML = text;
+            })
+        })">
+
+        <!-- use fetch API -->
+
+        <!-- 클라이언트와 서버의 통신
+        클라이언트의 요청 fetch('JavaScript') >>> 웹브라우저에 파일을 서버에 응답해달라고 요청 -->
+
+        <!-- what is then?
+        서버가 응답해줄 때 시간이 걸릴 수 있다
+        응답할 동안 다른 일을 할 수 있도록 then 을 사용 -->
+
+        <!-- <input class="fetch" type="button" value="fetch" onclick="
+        function callbackme(){
+            console.log('response end');
+        }
+        // fetch API 에게 응답이 끝나면 함수를 실행시켜줘 !
+        fetch('0601_fetchPage').then(callbackme);
+        // 코드 실행 후 웹브라우저 응답 완료 후 함수 호출 >>> Asynchronous(비동기)
+        console.log('hi fetch')
+        "> -->
+
+        <input class="fetch" type="button" value="fetch" onclick="
+        // callbackme 함수 >>> 익명함수 변경
+        fetch('JavaScript').then(function(response){
+            // 객체 속성에서 응답의 성공유무 확인 가능 200 / 404 등등
+            if(response.status == '404'){ // === 안됨
+                alert('Not found')
+            }
+        });
+        console.log('hi fetch')
+        ">
+    </body>
+</html>

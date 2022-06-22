@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fetch API</title>
+</head>
+<body>
+    <h1>fetch API</h1>
+
+    <script>
+    // console.log practice
+    console.log('fetch API')
+
+    // fetch 
+    // you can check 
+    // ok: true
+    // status: 200 (success)
+    // but bodyUsed: false >>> use .json
+    fetch("0601_fetchAPI.json")
+    .then(a => console.log(a))
+
+    // json
+    // we make js object
+    fetch("0601_fetchAPI.json")
+    .then(a => a.json())
+    .then(data => console.log(data))
+
+    // error 
+    // fetch("iHate.json...")
+    // .then(a => a.json())
+    // .then(data => console.log(data))
+    // // error text dosen't find
+    // .catch(error => console.log("ERROR")) 
+    
+
+    // success message
+    fetch("0601_fetchAPI.json")
+    .then(a => {
+        if(a.ok){ // 200 - 299
+            console.log('ok')
+        }else{
+            console.log('not ok')
+        }
+    })
+    .then(data => console.log(data))
+
+    // error message
+    // fetch("iHate.json...")
+    // .then(a => {
+    //     if(a.ok){
+    //         console.log('ok')
+    //     }else{
+    //         console.log('not ok')
+    //     }
+    // })
+    // .then(data => console.log(data))
+
+    // option 사용 못해봤다. 계속 오류 발생... 원인 찾다가 머리에 오류날 
+    // get post put delete // http method
+    // let user = {
+    //     name: 'John',
+    //     surname: 'Smith'
+    // };
+
+    // fetch("0601_fetchAPI.json",{
+    //     method: 'GET',
+    //     headers: {
+    //         'Content-Type': 'application/json;charset=utf-8'
+    //     },
+    //     body: JSON.stringify(user)
+    // })
+    // .then(a => a.json())
+    // .then(data => console.log(data))
+    //0601_fetchAPI.html:67 Uncaught (in promise) TypeError: Failed to execute 'fetch' on 'Window': Request with GET/HEAD method cannot have body.at 0601_fetchAPI.html:67:5
+
+    </script>
+</body>
+</html>
