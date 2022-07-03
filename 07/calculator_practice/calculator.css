@@ -1,0 +1,131 @@
+/* 레이아웃 리셋 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 50px;
+    /* color: white; */
+}
+
+/* 전체화면 크기 */
+body {
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* 계산기 몸통 */
+.calculator {
+    width: 250px;
+    height: 450px;
+    /* border: 1px solid blue; */
+    display: flex;
+    flex-direction: column;
+}
+
+/* 결과창 계산기 버튼 구분 */
+.calculator__display {
+    /* border: 1px solid green; */
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/*높이 구분*/
+.h30 {
+    flex: 30;
+}
+
+.h70 {
+    flex: 70;
+}
+
+
+/* 첫번째 결과창 (연산) */
+.calculator__display--bare {
+    /* border: 1px solid pink; */
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    height: 100%;
+
+    margin-right: 10px;
+
+    /* display: none; */
+}
+
+/* 두번째 결과창 (값) */
+.calculator__display--for-advanced {
+    /* border: 1px solid pink; */
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    height: 100%;
+
+    display: none;
+}
+
+/*계산기 버튼*/
+.calculator_buttons {
+    /* border: 1px solid orange; */
+    display: flex;
+    justify-content: space-between;
+}
+
+/*꾸미기*/
+
+* {
+    color: white;
+}
+
+.calculator {
+    background: black;
+}
+
+button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    font-size: 25px;
+
+    background: rgb(80, 80, 80);
+}
+
+.zero {
+    width: 112px;
+    border-radius: 50px;
+
+    text-align: left;
+    padding-left: 20px;
+}
+
+.gray {
+    background: rgb(163, 163, 163);
+}
+
+.black {
+    color: black;
+}
+
+button:nth-last-child(1) {
+    background: orange;
+}
+
+/* 클릭했을때 색이 바뀌는 */
+button:active {
+    background: rgb(207, 207, 207);
+}
+
+/* 클릭하고 다시 천천히 원래 색으로 돌아오는 */
+button:not(:active) {
+    transition: background-color 1s ease-in-out
+}
+
+button:nth-last-child(1):active {
+    background: rgb(255, 216, 144);
+    transition: 0.1s;
+}
