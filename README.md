@@ -3,3 +3,6 @@
 
 0703 sun <br/>
 계산기 bare minimum test 복습 <br/>
+
+0705 tue <br/>
+CMarket  props 복습 <br/>
