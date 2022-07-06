@@ -6,3 +6,6 @@
 
 0705 tue <br/>
 CMarket  props 복습 <br/>
+
+0706 wed <br/>
+redux 복습 <br/>
