@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header,
+nav,
+main,
+aside,
+footer {
+    border: 1px solid black;
+}
+
+header,
+nav,
+main,
+aside,
+footer {
+    padding: 2rem;
+    text-align: center;
+    font-size: 2rem;
+    background: lightcyan;
+}
+
+div {
+    display: flex;
+    justify-content: space-between;
+    height: 40rem;
+}
+
+nav,
+aside,
+main {
+    width: 25%;
+    background: lemonchiffon;
+}
+
+main {
+    width: 50%;
+}
