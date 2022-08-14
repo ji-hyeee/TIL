@@ -19,7 +19,7 @@ function calculator(num1, operator, num2) {
     if (operator === '-') {
         result = Number(num1) - Number(num2);
     }
-    if (operator === 'X') {
+    if (operator === '*') {
         result = Number(num1) * Number(num2);
     }
     if (operator === '/') {
@@ -34,6 +34,7 @@ let firstNum, operatorForAdvanced, previousKey, previousNum;
 // 클릭 이벤트 함수
 calculate.addEventListener('click', event => {
     // console.log(event.target.textContent)
+    // console.log(calculate.children[0].children)
 
     // HTML element가 div 라면
     if (event.target.matches('div')) {
@@ -87,6 +88,29 @@ calculate.addEventListener('click', event => {
             result.textContent = 0;
             previousKey = 'clear';
         }
+
+        // 뒤로가기 버튼
+        if (event.target.classList[0] === 'back') {
+            console.log('뒤로가기!')
+            firstNum = undefined;
+            operatorForAdvanced = undefined;
+            previousNum = undefined;
+            previousKey = 'clear';
+
+            (result.textContent > 10) ? result.textContent = result.textContent.slice(0, -1) : result.textContent = 0;
+        }
+
+        const modal = document.querySelector('.modal')
+        console.log(modal)
+
+        // 글씨가 계산기 화면에서 안 사라져서 모달로 바꿨음
+        if (event.target.classList[0] === 'smile') {
+            console.log('안뇽!')
+            // console.log(event.target)
+            modal.style.display = 'block'
+        } else {
+            modal.style.display = 'none';
+        }
     }
 })
 
@@ -95,3 +119,17 @@ calculate.addEventListener('click', event => {
 // https://developer.mozilla.org/ko/docs/Web/Events
 // 계산기에서 사용할 이벤트는 [마우스 이벤트 - click] 이다 / 마우스를 눌렀다 뗐을 때
 // listener: 이벤트를 받을 객체 or 함수
+
+// HTML JSResult Skip Results Iframe
+// EDIT ON
+// // 클래스 이름 설정/변경
+// function setClassName() {
+//     document.getElementById('ex').className = 'foo';
+//     alert(document.getElementById('ex').className);
+// }
+
+// // 클래스 추가
+// function addClassName() {
+//     document.getElementById('ex').className += ' bar';
+//     alert(document.getElementById('ex').className);
+// }

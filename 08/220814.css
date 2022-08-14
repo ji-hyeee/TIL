@@ -57,7 +57,7 @@ body {
     justify-content: space-between;
 }
 
-.btn1,
+.smile,
 .clear,
 .back,
 .number,
@@ -71,8 +71,13 @@ body {
     font-size: 2rem;
 }
 
+.enjoy {
+    font-size: 1.5rem;
+    /* border: 1px solid blue; */
+    margin-left: 1rem;
+}
+
 /* 액션 */
-.btn1:hover,
 .clear:hover,
 .back:hover,
 .number:hover,
@@ -82,4 +87,33 @@ body {
     color: white;
     cursor: pointer;
     font-size: 2.3rem;
+}
+
+
+/* 모달 */
+.modal {
+    /* border: 5px solid blue; */
+    position: absolute;
+    background: rgba(155, 155, 155, 0.8);
+    /* top: 0; */
+    z-index: 1;
+    color: white;
+    font-size: 3rem;
+    font-weight: 900;
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    line-height: 60rem;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.modal:hover {
+    font-size: 3.5rem;
+    transition: 0.3s;
+
+    /* 글씨만 회전하려면 div를 또 추가해야할까? */
+    /* span으로 따로 감싸서 hover 줬는데 안됨 */
+    /* transform: rotate(360deg); */
 }
